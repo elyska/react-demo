@@ -6,8 +6,8 @@ export default function Chat() {
 
   return (
     <>
-      {isOpen ? <ChatWindow /> : ''}
-      
+      <ChatWindow isOpen={isOpen} />
+
       <button
         className="btn btn-primary rounded-circle position-absolute d-flex align-items-center"
         style={{ bottom: '20px', right: '20px', width: '50px', height: '50px' }}

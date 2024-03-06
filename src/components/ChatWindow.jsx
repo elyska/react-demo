@@ -2,7 +2,7 @@ import { useState } from 'react';
 import MessageBubbleBot from './MessageBubbleBot';
 import MessageBubbleUser from './MessageBubbleUser';
 
-export default function ChatWindow() {
+export default function ChatWindow({ isOpen }) {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([{ sender: 'bot', text: 'Hello, how can I help you?' }]);
 
@@ -20,7 +20,7 @@ export default function ChatWindow() {
   return (
     <>
       <div
-        className="bg-light rounded p-2 position-absolute"
+        className={`bg-light rounded p-2 position-absolute ${isOpen ? 'd-block' : 'd-none'}`}
         style={{ width: 'max-content', bottom: '90px', right: '20px' }}
       >
         <div style={{ height: '350px', overflow: 'auto' }}>
